@@ -1,2 +1,3 @@
-# seaver-connect
-Community networking
+# Seaver Connect
+
+A community networking application, under construction.
