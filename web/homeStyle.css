@@ -80,13 +80,20 @@ li a:hover{
   background-color: #e1ebff;
 }
 
-.pictures{
+/*.pictures{
   padding-top: 60px;
   padding-left: 200px;
   padding-right: 200px;
   text-align: center;
-  margin: 0 auto;
   background-color: white;
+  margin: 0 auto;
+  display: block;
+}
+*/
+
+.pictures{
+  padding: 20px;
+  font-size: 20px;
 }
 
 #pictureList{
