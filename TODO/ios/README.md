@@ -1,1 +1,0 @@
-An ios client
