@@ -1,83 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Seaver Connect</title>
-      <meta charset="utf-8"/>
-      <link rel="stylesheet" type="text/css" href="css/home.css">
+    <title>Seaver Connect</title>
+    <meta charset="utf-8">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
+
+    <style type="text/css">
+      html, body{
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      #menu{
+        z-index: 1;
+        position: fixed;
+        list-style-type: none;
+        background-color: #354461;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      #menu li a{
+        float: left;
+        display: block;
+        color: white;
+        text-align: center; 
+        padding:20px 24px;
+        text-decoration: none;
+      }
+
+      #menu li a:hover{
+        background-color: #2a364d;
+      }
+
+      #menu .active{
+        background-color: #151b26;
+      }
+
+      #searchBar{
+        float:right;
+        padding: 15px;
+      }
+
+      #searchText{
+        margin: 0;
+        font-size:14px;
+        padding: 4px;
+      }
+
+      #container{
+        padding-right: 0.3em;
+        padding-left: 0.3em;
+      }
+
+    </style>
   </head>
-  <body>
-    <div class="container">
-      <div class="nav">
-        <ul id="menu">
-          <li><a class="active" href=home.html>Home</a></li>
-          <li><a href=profile.html>Profile</a></li>
-          <li><a href=jobs.html>Jobs</a></li>
-          <li><a href=#>Events</a></li>
-          <li><a href=#>Members</a></li>
-          <li><a href=#>About</a></li>
-          <li style="float:right"><a href=index.html>Sign Up</a></li> <!-- Dont display if signed in? -->
-          <li style="float:right"><a href=index.html>Sign In</a></li> <!-- Change into Log Out if already signed in -->
-        </ul>
-      </div>
-      <h2> HI testing </h2>
-      <div class="banner">
-        <h1>Seaver Connect Home Page</h1>
-        <p>This is a temporary banner.</p>
-        <p>It will be replaced with a slide show or a map relevent to seaver connect.</p>
-      </div>
-        
-      <div class="searchBar">
-        <!--Maybe put a search bar here?-->
-      </diV>
 
-      <div class="information">
-        <h3>The main or sub main information can be written here</h3>
-        <p>Second line of information</p>
-        <p>Third line of information</p>
-        <!-- CSS transition sliding from left and right? -->
+<body>
+
+
+  <div class="nav">
+    <ul id="menu">
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="network.html">My Network</a></li>
+      <li><a href="search.html">Search</a></li>
+
+     <li style="float:right"><a href=sign-in.html>Sign In</a></li> <!--Change to Sign Out if logged in-->
+      <div id="searchBar">
+        <form id="search" method="get" action="search.html">
+           <input id="searchText" type="text" placeholder="Search" size="20">
+           <input type="image" value="search" src="img/searchButton.png" width="18">
+        </form>
       </div>
 
-      <div class="pictures">
-        <ul id="pictureList">
-          <li>
-            First Item
-            <img width:"500" height="300" src='img/flower1.jpg'>
-          </li>
-          <li>Second Item
-            <img width:"500" height="300" src='img/flower2.jpg'>
-          </li>
-          <li>Third Item
-            <img width:"500" height="300" src='img/flower3.jpg'>
-          </li>
-          <li>Fourth Item
-            <img width:"500" height="300" src='img/flower4.jpg'>
-          </li>
-        </ul>
-      </div>
-
-      <div class="space">
-      </div>
-
-      <div class="slideshow">
-        <ul>
-          <li><img class="slides" src='cmsi.png'></li>
-          <li><img class="slides" src='biology.png'></li>
-          <li><img class="slides" src='chemistry.png'></li>
-        </ul>
-          <span class="prevButton">&#10094;</span>
-          <span class="nextButton">&#10095;</span>
-        <!--<span class="currentSlide1"></span>
-        <span class="currentSlide2"></span>
-        <span class="currentSlide3"></span> -->
-      </div>
-
-      <div class="footer">
-      </div>
+    </ul>
+  </div>
 
 
-      
-    </div>
+  <div class="container">
+    
 
-    <script src="home.js"></script>
-  </body>
-</html> 
+
+
+  </div>
+
+
+
+
+</body>
+</html>
