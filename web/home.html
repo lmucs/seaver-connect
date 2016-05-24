@@ -62,11 +62,13 @@
 
       #leftDiv{
         border: 3px solid grey;
-        margin: 80px;
-        margin-left:10%;
+        margin-top: 40px;
+        margin-right: 20px;
+        margin-left:15%;
         float: left;
         width: 300px;
         height: 1200px;
+        position: relative;
       }
 
       #profile{
@@ -83,11 +85,42 @@
 
       #rightDiv{
         border: 3px solid grey;
-        margin-top: 80px;
-        margin-right:10%;
-        width: 1100px;
+        margin-top: 40px;
+        margin-right:15%;
+        width: 1000px;
         height: 1200px;
         float:left;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      #rightDiv h2{
+        text-align: left;
+        padding-left: 30px;
+        font-size: 50px;
+        margin-top: -2px;
+      }
+
+      #job1, #job2, #job3{
+        border: 1px solid grey;
+        width: 200px;
+        height: 350px;
+        position: relative;
+        display: inline-block;
+        margin-top: -20px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+      }
+
+      #event1, #event2, #event3{
+        border: 1px solid grey;
+        width: 600px;
+        height: 180px;
+        margin: 10px;
+        margin-bottom: 20px;
+        margin-left: 20%;
+
       }
 
       #network{
@@ -101,6 +134,19 @@
         padding: 8px;
       }
 
+      footer{
+        border: 3px solid grey;
+        margin: 5px;
+        padding: 3px;
+        padding-left: 14px;
+        display: flex;
+        position: relative;
+        justify-content: flex-start;
+        margin-left: 15%;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        width: 1310px;
+      }
 
     </style>
   </head>
@@ -143,14 +189,27 @@
 
 
     <section id="rightDiv">
-      <h2>Title of this section</h2>
       <article>
         <h2>Jobs</h2>
+        <div id="job1">
+        </div>
+        <div id="job2">
+        </div>
+        <div id="job3">
+        </div>
       </article>
       <article>
         <h2>Events/News</h2>
+        <div id="event1">
+        </div>
+        <div id="event2">
+        </div>
+        <div id="event3">
       </article>
     </section>
+
+    <div id="space">
+    </div>
 
     <footer>
       <p>&copy; 2016 LMU|LA</p>
