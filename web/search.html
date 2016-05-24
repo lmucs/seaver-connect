@@ -1,10 +1,407 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Welcome to Seaver Connect!</title>
-</head>
-<body>
-<h1> Redirect to <a href=home.html>home</a>.</h1>
-<!-- Dummy Page -->
-</body>
+	<head>
+		<title>Search Results</title>
+		<style type="text/css">
+			html, body{
+			  font-family: sans-serif;
+			  margin: 0;
+			  width: 100%;
+			  height: 100%;
+			  text-align: center;
+			  background-color: #f5f5f5;
+			}
+
+			#searchPageContainer{
+				height: 1338px;
+				width: 974px;
+				margin: 70px auto;
+				background-color: white;
+				position: relative;
+				border-right: 2px solid #f5f8fa;
+				border-left: 2px solid #f5f8fa;
+
+			}
+
+			#menu{
+				background-color: #354461;
+				width: 100%;
+				position: fixed;
+				margin: 0;
+				padding: 0;
+				top: 0;
+				margin-bottom: 10px;
+				list-style-type: none;
+				z-index: 1;
+				overflow: hidden;
+			}
+
+			#menu li {
+				float: left;
+			}
+
+			#menu li a {
+				display: block;
+				width: 60px;
+				text-decoration: none;
+				padding:20px 24px;
+				margin: 0;
+				color: white;
+			}
+
+			#menu li input{
+				position: inline;
+				margin: 0;
+				margin-top: 20px
+			}	
+
+			#searchButton {
+				position: inline-block;
+				margin:0;
+				height: 20px;
+				margin: 20px 10px;
+			}
+
+			#rightNav{
+				float:right;
+			}
+
+			.active{
+				background-color: #151b26;
+			}
+
+			.hidden{
+				display: none;
+			}
+
+			.visible{
+				display: block;
+			}
+
+			.nav li a:hover{
+				background-color: #2a364d;
+			}
+
+			.nav li a {
+				display: block;
+			}
+
+			#numOfResultsContainer{
+				margin-top: 20px;
+				margin-bottom:5px;
+				padding-top: 20px;
+				position: static;
+				width: 100%;
+				display: block;
+
+			}
+
+			#resultsContainer{
+				position: relative;
+				padding: 0;
+				/*margin: 100px 100px;*/
+				width: 50%;
+    			margin: 30px auto;
+    			display: block;
+			}
+
+			#resultsContainer ul{
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+			}
+
+			#resultsContainer ul li{
+				display: block;
+				margin: 1px;
+				position: relative;
+
+			}
+
+			#resultsContainer ul li div{
+				padding: 0;
+				margin: 0;
+				width: 587px;
+				height: 96px;
+			}
+
+			.name{
+				position: inline-block;
+				font-weight: bold;
+				color: #1270db;
+				margin: 5px;
+				text-align: left
+			}
+
+			.description{
+				position: inline-block;
+				color: #b5b5b5;
+				margin: 5px;
+				text-align: left
+
+			}
+
+			.place{
+				position: inline-block;
+				margin: 5px;
+				text-align: left
+
+			}
+
+			.similar {
+				color: #706DC7;
+			    text-decoration: underline;
+				position: inline-block;
+				margin: 5px;
+				padding: 0;
+				text-align: left
+
+			}
+
+			.profilePicture{
+				margin: 0;
+				display: inline-block;
+				float: left;
+			}
+
+			.resultSeparator{
+				width: 100%;
+				padding:0;
+			}
+
+	
+	 		</style>
+	</head>
+	<body onload="startUp()">
+			<body onload="startUp()">
+
+		<div class ="nav">
+			<ul id = "menu">
+				<li><a href= home.html>Home</a></li>
+				<li><a href = profile.html>Profile</a></li>
+				<li><a>Jobs</a></li>
+				<li><a>Events</a></li>
+				<li><a>Members</a></li>
+				<li><a>About</a></li>
+			
+				<div id = "rightNav">
+					<li>
+						<input id ="searchBar" placeholder="Enter Search" type = "text"></input>
+					</li>
+					<li>
+						<button id = "searchButton">Search</button>
+					</li>
+					<li><a>Login</a></li>
+					<li><a>Sign Up</a></li>
+				</div>
+			</ul>
+		</div>
+
+	<!-- 	<div class ="sideBar">
+			<ul id = "searchOptions">
+			<li><a>yolo</a></li>
+		</div>  -->
+
+		<div id = "searchPageContainer">
+		<div id = "numOfResultsContainer" class = "visible">
+
+		<p1><strong id = "numberOfResults"></strong></p1> results for <strong id ="userQuery"></strong>
+		</div> 
+
+		<div id ="resultsContainer" class = "visible">
+			<ul>
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>			
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+				<li>
+					<div>	
+						<hr class = "resultSeparator"></hr>
+						<a class = "profilePicture" href = "profile.html"><img src = "img/defaultSearch.png"></img></a>
+						<p class = "name"></p>
+						<p class = "description"></p>
+						<p class = "place"></p>
+						<p class = "similar">Similar</p>
+						<hr class = "resultSeparator"></hr>
+					</div>
+				</li>	
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var searchBarHTML = document.getElementById("searchBar");
+		var userQueryHTML = document.getElementById("userQuery");
+		var searchResults = "";
+		var numOfResults = Math.floor(Math.random()*15000);
+		var numOfResultsHTML = document.getElementById("numberOfResults");
+
+		var names = ["Justin Kyle Torres", "Jen Shin", "Alejandro Zapata", "Eddie Azinge", "Tyler Edmiston", "Anthony Keba", "Jay Patel", "Tyler Edmiston", "Ray Toal", "Dondi Dondi"];
+		var places = ["Austin", "Milwakuee", "Rhode Island", "Shake Shack", "Detox Market", "Royala Raryrount", "Boyola Barybount", "Village Hidden in the Leaves", "Seaver X", "Young Village", "Land of Sodexo"];
+		var descriptions = ["Sophomore Seaver Connect Engineer", "Teacher of Young Youths", "Manager of Rhode Island", "Engineer of United Kingdom", "Assistant to the Dean of Computer Science", "Amateur Computer Science Major", "Junior Sophinomore Student", "Assistant Manager of Utah", "Creator of the Surface Book 2", "Designer of Las Vegas" ,"Imagineer", "Business Major with Good Ideas", "Professional Computer Science Minor"];
+
+		console.log(names.length);
+		console.log(places.length);
+		console.log(descriptions.length);
+
+
+		numOfResultsHTML.innerHTML = numOfResults;
+
+
+		searchButton.onclick = function(){
+			showResults();
+			numOfResults =  Math.floor(Math.random()*15000);
+			numOfResultsHTML.innerHTML = numOfResults;
+			resultQueryHTML.innerHTML = searchBar.value;
+			randomizeResults();
+		}
+
+		var showResults = function(){
+			for (x in document.getElementsByClassName("hidden")){
+			x.className = "visible";
+			}
+			console.log(x);
+
+			var x = document.getElementsByClassName("hidden");
+
+			for (i =0; i < x.length; i++){
+				x[i].className = "visible";
+			}
+		}
+
+		var randomizeResults = function(){
+			randomizeNames();
+			randomizePlaces();
+			randomizeDescriptions();
+		}
+
+
+
+		var assignProfilePicture = function(){
+
+		}
+
+		var startUp = function(){
+			randomizeResults();
+			randomizeSearchBarResultText();
+		}
+
+		var randomizeNames = function(){
+			var namesHTML = document.getElementsByClassName("name");
+			for (var i = 0; i < namesHTML.length; i++){
+				namesHTML[i].innerHTML = names[randomNumber(names.length)];
+			}
+		}
+
+		var randomizePlaces = function(){
+			var placesHTML = document.getElementsByClassName("place");
+			for (var i = 0; i < placesHTML.length; i++){
+				placesHTML[i].innerHTML = places[randomNumber(places.length)];
+
+			}
+		}
+
+		var randomizeDescriptions = function(){
+			var descriptionsHTML = document.getElementsByClassName("description");
+			for (var i = 0; i < descriptionsHTML.length; i++){
+				descriptionsHTML[i].innerHTML = descriptions[randomNumber(descriptions.length)];
+
+			}
+		}
+
+		var randomizeSearchBarResultText = function(){
+			var randomName = names[randomNumber(names.length)];
+			searchBarHTML.value = randomName;
+			userQueryHTML.innerHTML = randomName;
+		}
+		var randomNumber = function(max){
+			return Math.floor(Math.random() * max);
+		}
+
+
+	</script>
 </html>
