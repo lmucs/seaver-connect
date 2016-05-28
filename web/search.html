@@ -66,6 +66,10 @@
 				float:right;
 			}
 
+			#searchBar{
+				display: relative;
+			}
+
 			.active{
 				background-color: #151b26;
 			}
@@ -89,10 +93,12 @@
 			#numOfResultsContainer{
 				margin-top: 20px;
 				margin-bottom:5px;
+				margin-left: 0;
+				padding-left: 0;
 				padding-top: 20px;
-				position: static;
-				width: 100%;
-				display: block;
+				position: relative;
+				width: 575px;
+				display: inline-block;
 
 			}
 
@@ -102,7 +108,7 @@
 				/*margin: 100px 100px;*/
 				width: 50%;
     			margin: 30px auto;
-    			display: block;
+    			display: inline-block;
 			}
 
 			#resultsContainer ul{
@@ -169,7 +175,27 @@
 				padding:0;
 			}
 
-	
+			#sideBar{
+				position: relative;
+				display: inline-block;
+				float:left;
+				margin: 0;
+				bottom: 65px;
+			}
+			#sideBar ul{
+				list-style-type: none;
+			}
+
+			.locationResultNumber{
+
+			}
+
+			#searchLabel{
+				width: 95px;
+				height: 32px;
+				color: white;
+				background-color: #354461
+			}
 	 		</style>
 	</head>
 	<body onload="startUp()">
@@ -196,11 +222,6 @@
 				</div>
 			</ul>
 		</div>
-
-	<!-- 	<div class ="sideBar">
-			<ul id = "searchOptions">
-			<li><a>yolo</a></li>
-		</div>  -->
 
 		<div id = "searchPageContainer">
 		<div id = "numOfResultsContainer" class = "visible">
@@ -311,58 +332,66 @@
 				</li>	
 			</ul>
 		</div>
+		<div id = "sideBar">
+			<div id = "searchLabel">Search</div>
+			<hr></hr>
+			<ul id = "filters">
+					<li><strong>All</strong></li>
+					<li>People</li>
+					<li>Events</li>
+					<li>Jobs</li>
+					<li>Posts</li>
+					<li>Inbox</li>
+			</ul>
+			<hr></hr>
+			<ul id = "locations"><strong>Location</strong>
+				<li><input type = "radio">All</input></li>
+				<li><input type = "radio">United States <span class = "numberOfLocationResults"></span></input></li>
+				<li><input type = "radio">United Kingdom <span class = "numberOfLocationResults"></span></input></li>
+				<li><input type = "radio">Korea <span class = "numberOfLocationResults"></span></input></li>
+				<li><input type = "radio">Columbia <span class = "numberOfLocationResults"></span></input></li>
+			</ul>	
+		</div>
 	</body>
 	<script type="text/javascript">
 		
 		var searchBarHTML = document.getElementById("searchBar");
 		var userQueryHTML = document.getElementById("userQuery");
 		var searchResults = "";
-		var numOfResults = Math.floor(Math.random()*15000);
+		var maxResults = 300;
+		var numOfResults = Math.floor(Math.random()*maxResults);
 		var numOfResultsHTML = document.getElementById("numberOfResults");
 
 		var names = ["Justin Kyle Torres", "Jen Shin", "Alejandro Zapata", "Eddie Azinge", "Tyler Edmiston", "Anthony Keba", "Jay Patel", "Tyler Edmiston", "Ray Toal", "Dondi Dondi"];
 		var places = ["Austin", "Milwakuee", "Rhode Island", "Shake Shack", "Detox Market", "Royala Raryrount", "Boyola Barybount", "Village Hidden in the Leaves", "Seaver X", "Young Village", "Land of Sodexo"];
 		var descriptions = ["Sophomore Seaver Connect Engineer", "Teacher of Young Youths", "Manager of Rhode Island", "Engineer of United Kingdom", "Assistant to the Dean of Computer Science", "Amateur Computer Science Major", "Junior Sophinomore Student", "Assistant Manager of Utah", "Creator of the Surface Book 2", "Designer of Las Vegas" ,"Imagineer", "Business Major with Good Ideas", "Professional Computer Science Minor"];
 
-		console.log(names.length);
-		console.log(places.length);
-		console.log(descriptions.length);
-
-
 		numOfResultsHTML.innerHTML = numOfResults;
-
-
-		searchButton.onclick = function(){
-			showResults();
-			numOfResults =  Math.floor(Math.random()*15000);
-			numOfResultsHTML.innerHTML = numOfResults;
-			resultQueryHTML.innerHTML = searchBar.value;
-			randomizeResults();
-		}
-
-		var showResults = function(){
-			for (x in document.getElementsByClassName("hidden")){
-			x.className = "visible";
-			}
-			console.log(x);
-
-			var x = document.getElementsByClassName("hidden");
-
-			for (i =0; i < x.length; i++){
-				x[i].className = "visible";
-			}
-		}
 
 		var randomizeResults = function(){
 			randomizeNames();
 			randomizePlaces();
 			randomizeDescriptions();
+			randomizeNumberOfLocationResults();
 		}
 
+		searchButton.onclick = function(){
+			showResults();
+			numOfResults =  Math.floor(Math.random()*maxResults);
+			numOfResultsHTML.innerHTML = numOfResults;
+			userQueryHTML.innerHTML = searchBar.value;
+			randomizeResults();
+		}
 
+		var showResults = function(){
+			var x = document.getElementsByClassName("hidden");
+			for (i =0; i < x.length; i++){
+				x[i].className = "visible";
+			}
+		}
 
 		var assignProfilePicture = function(){
-
+			//todo
 		}
 
 		var startUp = function(){
@@ -402,6 +431,12 @@
 			return Math.floor(Math.random() * max);
 		}
 
+		var randomizeNumberOfLocationResults = function(){
+			var numberOfLocationResultsHTML = document.getElementsByClassName("numberOfLocationResults");
+			for (i =0; i < numberOfLocationResultsHTML.length; i++){
+				numberOfLocationResultsHTML[i].innerHTML = "(" + randomNumber(maxResults) + ")";
+			}
+		}
 
 	</script>
 </html>
