@@ -1,0 +1,88 @@
+html, body{
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  background-color: #d1e0e0;
+}
+
+
+#menu{
+  z-index: 1;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  overflow: auto;
+  background-color: #354461;
+  width: 100%;
+  top:0;
+}
+
+li{
+  float: left;
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 24px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: #2a364d;
+}
+
+.active{
+  background-color: #151b26;
+}
+
+.banner h1{
+  padding-left: 10px;
+}
+
+.banner p{
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+}
+
+.banner{
+  background-color: #ffffff;
+  width: 70%;
+  height: 100%;
+  background-size: 100% 100%;
+  overflow: hidden;
+  text-align: left;
+}
+
+.profileCard{
+  position: relative;
+  float: left;
+  padding: 10px 10px 10px 10px; 
+  overflow: hidden;
+  width: 100%;
+  overflow: auto;
+}
+
+.relatedUsers{
+  position: relative;
+  margin-left: 71%;
+  background-color: #ffffff;
+  width: 29%;
+  height: 100%;
+}
+
+.footer{
+  background-color: #354461;
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+}
