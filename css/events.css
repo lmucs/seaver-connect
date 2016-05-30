@@ -1,0 +1,125 @@
+body{
+	font-family: arial;
+	background-color: #eeeeee;
+}
+
+nav{
+	display: block;
+	height: 108px;
+}
+
+hr{
+	border: 0;
+	height: 1px;
+	background: #333;
+	background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: #333333;
+	overflow: hidden;
+	height: 108px;
+}
+
+li {
+	padding: 25px;
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111111;
+}
+
+.active{
+	baground-color: #4CAF50;
+}
+
+
+
+
+
+
+
+
+#topnav-container{
+	height: 108px;
+}
+
+#topnav-container-links{
+	height: 108px;
+}
+
+
+
+
+#sidebar{
+	width: 15%;
+	height: 81.5%;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+
+#sidebar-date{
+	margin: 5px;
+	padding: 2px;
+}
+
+.sidebar-datePicker{
+	width: 100%;
+}
+
+#sidebar-calendar{
+	width: 100%;
+	text-align: center;
+	background-color: #aaaaaa;
+	border: 2px solid #111111;
+}
+
+#sidebar-options{
+	float: left;
+	height: 150px;
+	width: 135px;
+	margin: 5px;
+}
+	
+	
+	
+	
+	
+	
+#newsfeed{
+	width: 84.11%;
+	height: 81.48%;
+	background-color: #aaaaaa;
+	float: right;
+}
+
+#newsfeed-title{
+	width: 100%
+	display: inline-block;
+	text-align: center;
+	background-color: #bbbbbb;
+}
+
+#newsfeed-header-backToTop{
+	float: right;
+}
+#newsfeed-header-search{
+	float: right;
+}
+
+
+
+ 
