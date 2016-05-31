@@ -99,5 +99,3 @@ var users = [
     picture: "http://lmucs.github.io/seaver-connect/img/defaultSearch.png"
   }
 ]
-
-export default users;
