@@ -50,5 +50,3 @@ var events = [
     broadcastGroups: ["Wrestling"]
   }
 ]
-
-export default events;
