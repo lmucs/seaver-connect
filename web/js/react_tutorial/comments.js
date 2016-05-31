@@ -225,5 +225,3 @@ var comments = [
     numLikes: 14
   }
 ]
-
-export default comments;
